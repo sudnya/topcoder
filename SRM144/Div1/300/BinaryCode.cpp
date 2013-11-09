@@ -3,7 +3,7 @@
  * Notes to self : dont work on old SRMs, the latest the better. Dont waste attempts in compiling errors etc.
  */
 
-  #include <iostream>
+#include <iostream>
 #include <vector>
 #include <string>
 #include <sstream>
