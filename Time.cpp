@@ -13,9 +13,10 @@ std::string whatTime(int seconds)
          return 1;
      }
      unsigned hour = seconds/3600;
-     unsigned remaining = seconds - (hour*3600);
+     // You can use % modulo operator to get the remaining after divide for 3600
+     unsigned remaining = seconds % 3600;
      unsigned min = remaining/60;
-     remaining -= min*60;
+     remaining %= 60;
      unsigned sec = remaining;
      
      std::stringstream ss;
