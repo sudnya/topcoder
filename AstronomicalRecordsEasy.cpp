@@ -21,9 +21,19 @@ public:
 			{
 				std::set<int>mySet;
 				for (auto& x : A)
+				{
 					mySet.insert(x*b);
+				}
 				for (auto& y : B)
+				{
 					mySet.insert(y*a);
+				}
+
+				std::cout << "Set has : ";
+				for (auto& c : mySet)
+					std::cout << " " << c; 
+
+				std::cout << "\n";
 
 				minPlanets = std::min<int>(minPlanets, mySet.size());
 			}
