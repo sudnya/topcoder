@@ -5,14 +5,20 @@
 #include<vector>
 #include<iostream>
 #include<algorithm>
-
+#include <limits>
 class WinterAndMandarins
 {
 public:
 	int getNumber(std::vector<int>bags, int K)
 	{
 		std::sort(bags.begin(), bags.end());
-		return (bags[K-1]-bags[0]);
+        int mindiff = std::numeric_limits<int>::max();
+		for (int i = 0; i < bags.size()-K-1; ++i) 
+		{
+			if (mindiff > bags[i+K-1]-bags[i])
+                mindiff = (bags[i+K-1]-bags[i]);
+		}
+		return mindiff;
 	}
 };
 
@@ -26,6 +32,6 @@ int main()
     bags.push_back(1);
     bags.push_back(74);
     int K = 2;
-    std::cout << "max diff = " << w.getNumber(bags, K);
+    std::cout << "max diff = " << w.getNumber(bags, K) << "\n";
     return 0;
 }
