@@ -13,9 +13,9 @@ public:
 	{
 		std::sort(bags.begin(), bags.end());
         int mindiff = std::numeric_limits<int>::max();
-		for (int i = 0; i < bags.size()-K-1; ++i) 
+		for (int i = 0; i < bags.size()-K; ++i) 
 		{
-			if (mindiff > bags[i+K-1]-bags[i])
+			if (mindiff > bags[i+K-1]-bags[i]) 
                 mindiff = (bags[i+K-1]-bags[i]);
 		}
 		return mindiff;
